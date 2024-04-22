@@ -8,7 +8,6 @@ vector<vector<int>> zeroMatrix(vector<vector<int>> &matrix, int n, int m) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (matrix[i][j] == 0) {
-                // mark i-th row:
                 matrix[i][0] = 0;
                 if (j != 0)
                     matrix[0][j] = 0;
@@ -47,12 +46,12 @@ int main()
     int m = matrix[0].size();
     vector<vector<int>> ans = zeroMatrix(matrix, n, m);
 
-    cout << "The Final matrix is: n";
+    cout << "The Final matrix is: \n";
     for (auto it : ans) {
         for (auto ele : it) {
             cout << ele << " ";
         }
-        cout << "n";
+        cout << "\n";
     }
     return 0;
 }
