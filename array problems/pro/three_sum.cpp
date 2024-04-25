@@ -62,10 +62,12 @@ vector<vector<int>> triplet(vector<int> &a, int n){
     set<vector<int>> st;
     for(int i=0; i<n; i++){
         for(int j=i+1; j<n; j++){
-            if(a[i] + a[j] + a[k] == 0){
+            for(int k=j+1; j<n; j++){
+                if(a[i] + a[j] + a[k] == 0){
                 vector<int> temp = {a[i], a[j], a[k]};
                 sort(temp.begin(), temp.end());
                 st.insert(temp);
+                }         
             }
         }
     }
