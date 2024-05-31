@@ -25,6 +25,7 @@ freopen("output.txt", "w", stdout);
 }
 
 int main(){
+    init_code();
     int n1, n2;
     cin >> n1;
     cin >> n2;
@@ -32,5 +33,5 @@ int main(){
     for(int i=0; i<n1; i++) cin >> arr1[i];
     for(int i=0; i<n2; i++) cin >> arr2[i];
     vector<int> arr3 = nextGreaterElement(arr1, arr2);
-    for(int i=0; i<arr3.size(); i++) cout << arr3[i];
+    for(int i=0; i<arr3.size(); i++) cout << arr3[i] << " ";
 }
