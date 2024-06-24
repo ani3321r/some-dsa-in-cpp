@@ -10,20 +10,6 @@ struct TreeNode {
     TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
-TreeNode* findLastRight(TreeNode* root){
-    if(root->right == NULL) return root;
-    return findLastRight(root->right);
-}
-
-TreeNode* helper(TreeNode* root){
-    if(root->left == NULL) return root->right;
-    if(root->right == NULL) return root->left;
-    TreeNode* rightChild = root->right;
-    TreeNode* lastRight = findLastRight(root->left);
-    lastRight->right = rightChild;
-    return root->left;
-}
-
 void reverseInorder(TreeNode* node, int& counter, int k, int& kLargest){
     if(!node || counter >= k) return;
     reverseInorder(node->right, counter, k, kLargest);
