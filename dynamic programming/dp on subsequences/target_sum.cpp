@@ -3,7 +3,6 @@
 using namespace std;
 
 int findWays(int tar, vector<int> &arr) {
-    int mod = (int)(1e9+7);
     int n = arr.size();
     vector<int> prev(tar+1, 0), cur(tar+1, 0);
     if(arr[0] == 0)prev[0] = 2;
@@ -14,7 +13,7 @@ int findWays(int tar, vector<int> &arr) {
             int notTake = prev[sum];
             int take = 0;
             if(arr[ind] <= sum) take = prev[sum-arr[ind]];
-            cur[sum] = (notTake + take) % mod;
+            cur[sum] = (notTake + take);
         }
         prev = cur;
     }
