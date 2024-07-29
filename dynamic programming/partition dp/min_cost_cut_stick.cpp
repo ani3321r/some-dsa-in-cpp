@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-int matrixMulti(int n, int c, vector<int>& cuts) {
+int minCost(int n, int c, vector<int>& cuts) {
     cuts.push_back(n);
     cuts.insert(cuts.begin(), 0);
     sort(cuts.begin(), cuts.end());
@@ -36,7 +36,7 @@ int main() {
     vector<int> arr(c);
     for(int i=0; i<c; i++) cin >> arr[i];
     
-    int result = matrixMulti(s, c, arr);
+    int result = minCost(s, c, arr);
     cout << result << endl;
     
     return 0;
